@@ -1,0 +1,106 @@
+<Page x:Class="GantsPlace.Views.DemarragePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#EEEEEE"
+      Title="Démarrage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+		
+        <!-- Main content -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+            <TextBlock Text="Bienvenue chez Gands App"
+                       FontFamily="{StaticResource AppFont}" FontSize="28" FontWeight="Bold"
+                       Foreground="{StaticResource PrimaryDarkBrush}"
+                       HorizontalAlignment="Center" Margin="0,0,0,6"/>
+            <TextBlock Text="Découvrez nos espaces pour tous vos événements à Lomé"
+                       FontFamily="{StaticResource AppFont}" FontSize="15"
+                       Foreground="{StaticResource AccentGrayBrush}"
+                       HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+            <!-- 5 cercles membres -->
+            <Border Background="White" CornerRadius="20" Padding="30,24">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="3" BlurRadius="15" Opacity="0.12" Color="Black"/>
+                </Border.Effect>
+                <StackPanel Orientation="Horizontal">
+
+                    <!-- Membre 1 -->
+                    <StackPanel Margin="0,0,16,0" HorizontalAlignment="Center" Width="150">
+                        <Border x:Name="Circle1" Width="150" Height="150" CornerRadius="75"
+                                BorderBrush="{StaticResource PrimaryDarkBrush}" BorderThickness="2"
+                                ClipToBounds="True" Background="#DDDDDD"/>
+                        <TextBlock Text="Ziad SANHONGOU"
+                                   FontFamily="{StaticResource AppFont}" FontSize="11" FontWeight="SemiBold"
+                                   Foreground="{StaticResource PrimaryDarkBrush}"
+                                   HorizontalAlignment="Center" TextAlignment="Center"
+                                   TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <!-- Membre 2 -->
+                    <StackPanel Margin="0,0,16,0" HorizontalAlignment="Center" Width="150">
+                        <Border x:Name="Circle2" Width="150" Height="150" CornerRadius="75"
+                                BorderBrush="{StaticResource PrimaryDarkBrush}" BorderThickness="2"
+                                ClipToBounds="True" Background="#DDDDDD"/>
+                        <TextBlock Text="Mariam DIALLO"
+                                   FontFamily="{StaticResource AppFont}" FontSize="11" FontWeight="SemiBold"
+                                   Foreground="{StaticResource PrimaryDarkBrush}"
+                                   HorizontalAlignment="Center" TextAlignment="Center"
+                                   TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <!-- Membre 3 -->
+                    <StackPanel Margin="0,0,16,0" HorizontalAlignment="Center" Width="150">
+                        <Border x:Name="Circle3" Width="150" Height="150" CornerRadius="75"
+                                BorderBrush="{StaticResource PrimaryDarkBrush}" BorderThickness="2"
+                                ClipToBounds="True" Background="#DDDDDD"/>
+                        <TextBlock Text="Honoré N'TSAKPE"
+                                   FontFamily="{StaticResource AppFont}" FontSize="11" FontWeight="SemiBold"
+                                   Foreground="{StaticResource PrimaryDarkBrush}"
+                                   HorizontalAlignment="Center" TextAlignment="Center"
+                                   TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <!-- Membre 4 -->
+                    <StackPanel Margin="0,0,16,0" HorizontalAlignment="Center" Width="150">
+                        <Border x:Name="Circle4" Width="150" Height="150" CornerRadius="75"
+                                BorderBrush="{StaticResource PrimaryDarkBrush}" BorderThickness="2"
+                                ClipToBounds="True" Background="#DDDDDD"/>
+                        <TextBlock Text="Brightson GNASSOUNOU-AKPA"
+                                   FontFamily="{StaticResource AppFont}" FontSize="11" FontWeight="SemiBold"
+                                   Foreground="{StaticResource PrimaryDarkBrush}"
+                                   HorizontalAlignment="Center" TextAlignment="Center"
+                                   TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <!-- Membre 5 -->
+                    <StackPanel HorizontalAlignment="Center" Width="150">
+                        <Border x:Name="Circle5" Width="150" Height="150" CornerRadius="75"
+                                BorderBrush="{StaticResource PrimaryDarkBrush}" BorderThickness="2"
+                                ClipToBounds="True" Background="#DDDDDD"/>
+                        <TextBlock Text="Emmanuel ADANDE"
+                                   FontFamily="{StaticResource AppFont}" FontSize="11" FontWeight="SemiBold"
+                                   Foreground="{StaticResource PrimaryDarkBrush}"
+                                   HorizontalAlignment="Center" TextAlignment="Center"
+                                   TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- Bas : bouton entrer -->
+        <Border Grid.Row="2" Background="{StaticResource PrimaryDarkBrush}" Padding="0,20">
+            <Button Content="Entrer dans l'application  →"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Background="{StaticResource AccentGrayBrush}"
+                    Padding="40,14" FontSize="15"
+                    HorizontalAlignment="Center"
+                    Click="BtnEntrer_Click"/>
+        </Border>
+    </Grid>
+</Page>

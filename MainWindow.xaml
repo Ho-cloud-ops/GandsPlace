@@ -1,0 +1,62 @@
+<Window x:Class="GantsPlace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GANDS APP" Height="700" Width="1150"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource SecondaryDarkBrush}"
+        MinWidth="900" MinHeight="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top bar -->
+        <Border Grid.Row="0" Background="{StaticResource PrimaryDarkBrush}" Height="60">
+            <Grid Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+              
+
+                
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="BtnInscription" Content="Inscription" Style="{StaticResource NavButtonActiveStyle}" Margin="0,0,8,0" Click="BtnInscription_Click"/>
+                    <Button x:Name="BtnConnexion" Content="Connexion" Style="{StaticResource NavButtonStyle}" Click="BtnConnexion_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border x:Name="NavBar" Grid.Row="1" Background="{StaticResource PrimaryDarkBrush}">
+            <Grid Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="GANDS APP"
+                           FontFamily="{StaticResource AppFont}" FontSize="20" FontWeight="Bold"
+                           Foreground="White" VerticalAlignment="Center" Margin="0,0,36,0"/>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="BtnAccueil" Content="Accueil" Style="{StaticResource NavButtonStyle}" Margin="0,0,4,0" Click="BtnAccueil_Click"/>
+                    <Button x:Name="BtnExplorer" Content="Explorer" Style="{StaticResource NavButtonStyle}" Margin="0,0,4,0" Click="BtnExplorer_Click"/>
+                    <Button x:Name="BtnHistorique" Content="Historique" Style="{StaticResource NavButtonStyle}" Margin="0,0,4,0" Click="BtnHistorique_Click"/>
+                    <Button x:Name="BtnContact" Content="Contact" Style="{StaticResource NavButtonStyle}" Click="BtnContact_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock x:Name="TxtUserName" Foreground="White" FontFamily="{StaticResource AppFont}" FontSize="13" VerticalAlignment="Center" Visibility="Collapsed" Margin="0,0,8,0"/>
+                    <Button x:Name="BtnDeconnexion" Content="Déconnexion" Style="{StaticResource NavButtonStyle}" Visibility="Collapsed" Click="BtnDeconnexion_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Frame x:Name="MainFrame" Grid.Row="2" NavigationUIVisibility="Hidden" Background="Transparent"/>
+    </Grid>
+</Window>

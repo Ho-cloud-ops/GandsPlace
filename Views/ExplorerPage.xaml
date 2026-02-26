@@ -1,0 +1,58 @@
+<Page x:Class="GantsPlace.Views.ExplorerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="{StaticResource SecondaryDarkBrush}" Title="Explorer">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Barre filtres -->
+        <Border Grid.Row="0" Background="{StaticResource PrimaryDarkBrush}" Padding="20,14">
+            <StackPanel>
+                <!-- Ligne 1 : Type + Capacité + Tri -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Type :" Foreground="#AAAAAA" FontFamily="{StaticResource AppFont}"
+                               FontSize="13" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox x:Name="CmbFiltreType" Width="165" FontFamily="{StaticResource AppFont}"
+                              FontSize="13" SelectionChanged="FiltreChanged" Margin="0,0,16,0">
+                        <ComboBoxItem Content="Tous les types" IsSelected="True"/>
+                        <ComboBoxItem Content="Salle de réunion"/>
+                        <ComboBoxItem Content="Salle de cours"/>
+                        <ComboBoxItem Content="Amphithéâtre"/>
+                    </ComboBox>
+
+                    <TextBlock Text="Capacité :" Foreground="#AAAAAA" FontFamily="{StaticResource AppFont}"
+                               FontSize="13" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox x:Name="CmbFiltreCapacite" Width="180" FontFamily="{StaticResource AppFont}"
+                              FontSize="13" SelectionChanged="FiltreChanged" Margin="0,0,16,0">
+                        <ComboBoxItem Content="Toutes capacités" IsSelected="True"/>
+                        <ComboBoxItem Content="Moins de 20 personnes"/>
+                        <ComboBoxItem Content="20 à 50 personnes"/>
+                        <ComboBoxItem Content="Plus de 50 personnes"/>
+                    </ComboBox>
+
+                    <TextBlock Text="Trier :" Foreground="#AAAAAA" FontFamily="{StaticResource AppFont}"
+                               FontSize="13" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox x:Name="CmbTri" Width="150" FontFamily="{StaticResource AppFont}"
+                              FontSize="13" SelectionChanged="FiltreChanged" Margin="0,0,16,0">
+                        <ComboBoxItem Content="Nom (A-Z)" IsSelected="True"/>
+                        <ComboBoxItem Content="Nom (Z-A)"/>
+                        <ComboBoxItem Content="Capacité ↑"/>
+                        <ComboBoxItem Content="Capacité ↓"/>
+                    </ComboBox>
+
+                    <TextBlock x:Name="TxtResultats" Foreground="#AAAAAA" FontFamily="{StaticResource AppFont}"
+                               FontSize="13" VerticalAlignment="Center"/>
+                </StackPanel>
+               
+            </StackPanel>
+        </Border>
+
+        <!-- Cartes -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="20">
+            <WrapPanel x:Name="SallesPanel" HorizontalAlignment="Center"/>
+        </ScrollViewer>
+    </Grid>
+</Page>
